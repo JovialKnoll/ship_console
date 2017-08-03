@@ -6,14 +6,12 @@ class Handler(object):
         print("Welcome to Low Power Console v1.03 LTS")
         print()
         print("second message part goes here")
-    def _default(self):
+    def _default(self, inputs):
         print("default message stuff goes here")
     def handle_input(self, input):
-        #check for special "end everything" input
         if input == "game_over_xxx":
              return False
-        #maybe pass in just first word?
-        #pass other words to function?
-        function = input_dict.get(input, self._default)
-        function()
+        input_split = input.split()
+        function = input_dict.get(input_split[0], self._default)
+        function(input_split[1:])
         return True
