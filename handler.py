@@ -1,8 +1,14 @@
+import os
+
 class Handler(object):
     def __init__(self):
         input_dict = {}
         #add to dict
     def handle_welcome(self):
+        command = 'clear'
+        if os.name == 'nt':
+            command = 'cls'
+        os.system(command)
         print("Welcome to Low Power Console v1.03 LTS")
         print()
         print("second message part goes here")
