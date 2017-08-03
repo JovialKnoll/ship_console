@@ -1,10 +1,13 @@
 class Handler(object):
-    welcome_message = "test welcome message"
     def __init__(self):
         input_dict = {}
         #add to dict
+    def handle_welcome(self):
+        print("Welcome to Low Power Console v1.03 LTS")
+        print()
+        print("second message part goes here")
     def _default(self):
-        print("default text goes here")
+        print("default message stuff goes here")
     def handle_input(self, input):
         #check for special "end everything" input
         if input == "game_over_xxx":

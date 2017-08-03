@@ -4,7 +4,7 @@ from handler import *
 
 def main():
     handler = Handler()
-    print(handler.welcome_message)
+    handler.handle_welcome()
     still_running = True
     while (still_running):
         #get actual input
