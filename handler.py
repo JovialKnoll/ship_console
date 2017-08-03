@@ -3,9 +3,9 @@ class Handler(object):
     def __init__(self):
         input_dict = {}
         #add to dict
-    def _default():
+    def _default(self):
         print("default text goes here")
-    def handle_input(input):
+    def handle_input(self, input):
         #check for special "end everything" input
         if input == "game_over_xxx":
              return False
