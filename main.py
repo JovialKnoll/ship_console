@@ -7,9 +7,8 @@ def main():
     handler.handle_welcome()
     still_running = True
     while (still_running):
-        #get actual input
-        input = "game_over_xxx"
-        still_running = handler.handle_input(input)
+        user_input = input("> ")
+        still_running = handler.handle_input(user_input)
 
 if __name__ == "__main__":
     main()

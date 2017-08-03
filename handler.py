@@ -2,7 +2,7 @@ import os
 
 class Handler(object):
     def __init__(self):
-        input_dict = {}
+        self.input_dict = {}
         #add to dict
     def handle_welcome(self):
         command = 'clear'
@@ -17,7 +17,12 @@ class Handler(object):
     def handle_input(self, input):
         if input == "game_over_xxx":
              return False
-        input_split = input.split()
-        function = input_dict.get(input_split[0], self._default)
-        function(input_split[1:])
+        function = self._default
+        inputs = input.split()
+        if inputs:
+            function = self.input_dict.get(
+                inputs[0],
+                self._default
+            )
+        function(inputs[1:])
         return True
