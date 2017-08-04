@@ -1,5 +1,7 @@
 import os
 
+from help import *
+
 class Handler(object):
     def __init__(self):
         self.input_dict = {}
@@ -13,7 +15,7 @@ class Handler(object):
         print()
         print("second message part goes here")
     def _default(self, inputs):
-        print("default message stuff goes here")
+        print("For a list of commands, type 'help'.")
     def handle_input(self, input):
         if input == "game_over_xxx":
              return False
