@@ -9,7 +9,7 @@ def main():
     while (still_running):
         user_input = input("> ")
         still_running = handler.handle_input(user_input)
+    sys.exit()
 
 if __name__ == "__main__":
     main()
-sys.exit()
