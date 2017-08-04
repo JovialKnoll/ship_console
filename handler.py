@@ -1,6 +1,6 @@
 import os
 
-from help import *
+from commands.command import *
 
 class Handler(object):
     def __init__(self):
@@ -17,7 +17,7 @@ class Handler(object):
     def _default(self, inputs):
         print("For a list of commands, type 'help'.")
     def handle_input(self, input):
-        if input == "game_over_xxx":
+        if input == "xxx":
              return False
         function = self._default
         inputs = input.split()

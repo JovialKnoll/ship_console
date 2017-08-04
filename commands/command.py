@@ -2,26 +2,27 @@ import os
 
 class Command(object):
     commands_visible = []
-    for (dirpath, dirnames, filenames) in os.walk('.'):
+    for (dirpath, dirnames, filenames) in os.walk('commands'):
         for filename in filenames:
             if (
                 not filename.endswith('.py')
                 or not filename[0].isalpha()
-                or not filename == 'command.py'
+                or filename == 'command.py'
             ):
                 continue
             clean_name = filename[:-3]
             commands_visible.append(clean_name)
         break
     commands_visible.sort()
+    commands_invisible = []
 
     @classmethod
     def get_all_commands(cls):
-        return list(commands_visible)
+        return cls.commands_visible + cls.commands_invisible
 
     @classmethod
     def get_visible_commands(cls):
-        return list(commands_visible)
+        return list(cls.commands_visible)
 
     def get_key(self):
         raise NotImplementedError(
