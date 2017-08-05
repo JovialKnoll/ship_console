@@ -1,0 +1,7 @@
+load commands dynamically
+
+create visible commands
+
+create hidden commands (probably only game actions?)
+
+create a history of commands entered?
