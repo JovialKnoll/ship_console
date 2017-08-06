@@ -1,16 +1,20 @@
 import os
+import importlib
 
 from commands.command import *
 
 class Handler(object):
     def __init__(self):
         self.input_dict = {}
-        #add to dict
+        for command in Command.get_all_commands():
+            importlib.import_module('commands.' + command)
+            #use exec to add to dict
+            print(command)
     def handle_welcome(self):
-        command = 'clear'
+        clear_screen = 'clear'
         if os.name == 'nt':
-            command = 'cls'
-        os.system(command)
+            clear_screen = 'cls'
+        #os.system(clear_screen)
         print("Welcome to Low Power Console v1.03 LTS")
         print()
         print("second message part goes here")
