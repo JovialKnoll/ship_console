@@ -1,17 +1,20 @@
 import os
 
+def add_file(command_list, filenames):
+    for filename in filenames:
+        if (
+            not filename.endswith('.py')
+            or not filename[0].isalpha()
+            or filename == 'command.py'
+        ):
+            continue
+        clean_name = filename[:-3]
+        command_list.append(clean_name)
+
 class Command(object):
     commands_visible = []
     for (dirpath, dirnames, filenames) in os.walk('commands'):
-        for filename in filenames:
-            if (
-                not filename.endswith('.py')
-                or not filename[0].isalpha()
-                or filename == 'command.py'
-            ):
-                continue
-            clean_name = filename[:-3]
-            commands_visible.append(clean_name)
+        add_file(commands_visible, filenames)
         break
     commands_visible.sort()
     commands_invisible = []
