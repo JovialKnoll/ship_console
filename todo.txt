@@ -1,7 +1,3 @@
-load commands dynamically
-
-https://stackoverflow.com/questions/301134/dynamic-module-import-in-python
-
 create visible commands
 
 create hidden commands (probably only game actions?)
