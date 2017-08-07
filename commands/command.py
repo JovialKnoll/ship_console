@@ -13,11 +13,17 @@ def add_file(command_list, filenames):
 
 class Command(object):
     commands_visible = []
-    for (dirpath, dirnames, filenames) in os.walk('commands'):
+    dir = 'commands'
+    for (dirpath, dirnames, filenames) in os.walk(dir):
         add_file(commands_visible, filenames)
         break
     commands_visible.sort()
+
     commands_invisible = []
+    #get invisible commands
+    #for (dirpath, dirnames, filenames) in os.walk(dir):
+    #    add_file(commands_invisible, filenames)
+    #    break
 
     @classmethod
     def get_all_commands(cls):
