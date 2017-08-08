@@ -1,0 +1,9 @@
+from commands.command import *
+
+class Template(Command):
+    def get_key(self):
+        return "template"
+
+    def run(self, inputs):
+        #this can be fancy
+        print("do something")
