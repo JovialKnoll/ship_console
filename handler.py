@@ -13,7 +13,7 @@ class Handler(object):
             self.input_dict[comm.get_key()] = comm.run
 
     def handle_welcome(self):
-        clear_screen = 'clear'
+        clear_screen = 'tput reset'
         if os.name == 'nt':
             clear_screen = 'cls'
         os.system(clear_screen)
