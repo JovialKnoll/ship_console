@@ -33,12 +33,6 @@ class Command(object):
     def get_visible_commands(cls):
         return list(cls.commands_visible)
 
-    def get_key(self):
-        raise NotImplementedError(
-            self.__class__.__name__
-            + ".get_key"
-        )
-
     def run(self, inputs):
         raise NotImplementedError(
             self.__class__.__name__

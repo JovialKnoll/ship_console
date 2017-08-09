@@ -10,10 +10,10 @@ class Handler(object):
             exec(exec_command)
             eval_command = "{0}()".format(command.title())
             comm = eval(eval_command)
-            self.input_dict[comm.get_key()] = comm.run
+            self.input_dict[command] = comm.run
 
     def handle_welcome(self):
-        clear_screen = 'tput reset'
+        clear_screen = 'clear'#'tput reset'
         if os.name == 'nt':
             clear_screen = 'cls'
         os.system(clear_screen)
