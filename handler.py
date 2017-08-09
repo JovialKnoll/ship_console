@@ -3,7 +3,8 @@ import os
 from commands.command import *
 
 class Handler(object):
-    def __init__(self):
+    def __init__(self, full_clear):
+        self.full_clear = full_clear
         self.input_dict = {}
         for command in Command.get_all_commands():
             exec_command = "from commands.{0} import *".format(command)
@@ -13,7 +14,9 @@ class Handler(object):
             self.input_dict[command] = comm.run
 
     def handle_welcome(self):
-        clear_screen = 'clear'#'tput reset'
+        clear_screen = 'clear'
+        if self.full_clear:
+            clear_screen = 'tput reset'
         if os.name == 'nt':
             clear_screen = 'cls'
         os.system(clear_screen)
