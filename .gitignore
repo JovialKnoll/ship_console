@@ -100,5 +100,8 @@ ENV/
 # mypy
 .mypy_cache/
 
+# pycharm
+.idea/
+
 # save files
 *.save
